@@ -9,11 +9,13 @@
       "require": "./dist/index.cjs.js"
     }
   },
+  "schemas": "./dist/index.d.ts",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
   "typings": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "src/**/**",
+    "dist/**/**"
   ],
   "scripts": {
     "dev": "vite",
