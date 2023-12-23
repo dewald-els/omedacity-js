@@ -1,5 +1,8 @@
-import { Heroes } from "../../types";
+import { Heroes, SDKResponse } from "../../types";
 
-export const getHeroes = (): Heroes => {
-  return [];
+export const getHeroes = async (): Promise<SDKResponse<Heroes>> => {
+  return {
+    data: [],
+    error: null,
+  };
 };
