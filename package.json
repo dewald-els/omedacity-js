@@ -1,17 +1,17 @@
 {
   "name": "omedacity-js",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/main.es.js",
-      "require": "./dist/main.cjs.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
     }
   },
-  "main": "./dist/main.cjs.js",
-  "module": "./dist/main.es.js",
-  "typings": "./dist/main.d.ts",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "typings": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
