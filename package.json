@@ -1,7 +1,7 @@
 {
   "name": "omedacity-js",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "exports": {
     ".": {
@@ -11,10 +11,9 @@
   },
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
-  "schemas": "./dist/index.d.ts",
-  "typings": "./dist/index.d.ts",
+  "schemas": "./dist/src/index.d.ts",
+  "typings": "./dist/src/index.d.ts",
   "files": [
-    "src/**/**",
     "dist/**/**"
   ],
   "scripts": {
