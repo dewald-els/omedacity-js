@@ -1,3 +1,5 @@
-export const getHeroes = () => {
+import { Heroes } from "~/types";
+
+export const getHeroes = (): Heroes => {
   return [];
 };
