@@ -1,3 +1,2 @@
-export const getHeroes = () => {
-  return [];
-};
+export * from "./types";
+export * from "./requests";
