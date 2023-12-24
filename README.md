@@ -1,5 +1,10 @@
 # OmedaCity JavaScript SDK
 
+## Examples
+
+
+### Fetch Heroes
+
 ```typescript
 import { OmedaCityClient } from "omedacity-js"
 
@@ -15,4 +20,21 @@ try {
 catch(error) {
     // Handle Error.
 }
+```
+
+### Fetch Player Matches
+
+```typescript
+import { OmedaCityClient, Roles } from "omedacity-js";
+
+const client = new OmedaCityClient();
+
+client.playerMatches.getByPlayerId({
+  playerId: "12345",
+  params: {
+    match_filter: {
+      role: OmedaCity.Roles.Carry
+    }
+  }
+})
 ```
