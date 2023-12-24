@@ -2,6 +2,7 @@ import { HeroesCollection } from "./collections/heroes";
 import { ItemsCollection } from "./collections/items";
 import { MatchesCollection } from "./collections/matches";
 import { PlayerMatchesCollection } from "./collections/player-matches";
+import { PlayerStatisticsCollection } from "./collections/player-statistics";
 import { PlayersCollection } from "./collections/players";
 import { OmedaCity } from "./types";
 
@@ -11,16 +12,15 @@ class OmedaCityClient {
   matches = new MatchesCollection();
   players = new PlayersCollection();
   playerMatches = new PlayerMatchesCollection();
+  playerStatistics = new PlayerStatisticsCollection();
 }
 
 export default OmedaCityClient;
 const client = new OmedaCityClient();
 
-client.playerMatches.getByPlayerId({
-  playerId: "qwer",
+client.playerStatistics.getByPlayerId({
+  playerId: "1",
   params: {
-    match_filter: {
-      role: OmedaCity.Roles.Carry
-    }
-  }
-})
+    time_frame: OmedaCity.TimeFrame.OneDay,
+  },
+});

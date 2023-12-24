@@ -11,8 +11,8 @@
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "schemas": "./dist/types.d.ts",
-  "typings": "./dist/types.d.ts",
+  "schemas": "./dist/types/index.d.ts",
+  "typings": "./dist/types/index.d.ts",
   "files": [
     "./dist/**/*"
   ],

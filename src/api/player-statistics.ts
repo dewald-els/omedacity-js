@@ -3,21 +3,23 @@ import { client, createQueryParams } from ".";
 import { OmedaCity } from "../types";
 
 /**
- * Find Player by Id
+ * Find Player Statistics by Player Id
  * @param {Axios} client
  * @returns
  */
-const playerMatchesFindByPlayerId =
+const playerStatisticsFindByPlayerId =
   (client: Axios) => (options: OmedaCity.PlayerMatchesOptions) => {
     const { playerId, params } = options;
     const query = createQueryParams(params);
     return client
-      .get<OmedaCity.Matches>("/players/" + playerId + "/matches.json" + query)
+      .get<OmedaCity.PlayerStatistics>(
+        "/players/" + playerId + "/statistics.json" + query
+      )
       .then((response: AxiosResponse) => {
         const { data } = response;
-        return data as OmedaCity.Matches;
+        return data as OmedaCity.PlayerStatistics;
       });
   };
 
-export const findPlayerMatchesByPlayerIdWithClient =
-  playerMatchesFindByPlayerId(client);
+export const findPlayerStatisticsByPlayerIdWithClient =
+  playerStatisticsFindByPlayerId(client);

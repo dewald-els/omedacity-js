@@ -25,7 +25,7 @@ catch(error) {
 ### Fetch Player Matches
 
 ```typescript
-import { OmedaCityClient, Roles } from "omedacity-js";
+import { OmedaCityClient, OmedaCity } from "omedacity-js";
 
 const client = new OmedaCityClient();
 
@@ -37,4 +37,19 @@ client.playerMatches.getByPlayerId({
     }
   }
 })
+```
+
+### Fetch Player Statistics
+
+```typescript
+import { OmedaCityClient, OmedaCity } from "omedacity-js";
+
+const client = new OmedaCityClient();
+
+client.playerStatistics.getByPlayerId({
+  playerId: "1",
+  params: {
+    time_frame: OmedaCity.TimeFrame.OneDay,
+  },
+});
 ```

@@ -9,7 +9,7 @@ export class PlayerMatchesCollection {
    */
   getByPlayerId(
     options: OmedaCity.PlayerMatchesOptions
-  ): Promise<OmedaCity.Match> {
+  ): Promise<OmedaCity.Matches> {
     return findPlayerMatchesByPlayerIdWithClient(options);
   }
 }
