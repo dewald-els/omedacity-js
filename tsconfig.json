@@ -10,6 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": false,
     "forceConsistentCasingInFileNames": true,
+    "resolvePackageJsonImports": true,
     /* Bundler mode */
     "moduleResolution": "Node",
     "allowImportingTsExtensions": true,

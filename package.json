@@ -24,11 +24,13 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/node": "^20.10.5",
-    "prettier": "^3.1.1",
     "rollup-plugin-typescript-paths": "^1.5.0",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
+  },
+  "engines": {
+    "node": "18.0.0"
   },
   "dependencies": {
     "axios": "^1.6.2"

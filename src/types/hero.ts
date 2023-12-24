@@ -1,3 +1,5 @@
+import { SDKResponse } from "./sdk-response";
+
 export interface Hero {
   id: number;
   game_id: number | null;
@@ -37,3 +39,8 @@ export interface HeroBaseStats {
 }
 
 export type Heroes = Hero[];
+
+export interface HeroModel {
+    get: () => Promise<SDKResponse<Heroes>>;
+    getByName: (heroName: string) => Promise<SDKResponse<Hero>>;
+}
