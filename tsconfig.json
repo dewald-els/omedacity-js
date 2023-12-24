@@ -10,7 +10,6 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": false,
     "forceConsistentCasingInFileNames": true,
-    /* Bundler mode */
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -19,7 +18,6 @@
     "paths": {},
     "outDir": "dist",
     "declaration": true,
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
