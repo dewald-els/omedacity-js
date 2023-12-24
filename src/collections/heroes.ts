@@ -10,7 +10,7 @@ export class HeroesCollection {
    * @param {string} name
    * @returns
    */
-  getByName(name) {
+  getByName(name: string) {
     return findHeroByNameWithClient(name);
   }
 }

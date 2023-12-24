@@ -17,10 +17,12 @@
     "./**/**"
   ],
   "scripts": {
+    "build": "tsc"
   },
+  "engines": {},
   "devDependencies": {
-  },
-  "engines": {    
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "axios": "^1.6.2"
