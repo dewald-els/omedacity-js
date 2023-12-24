@@ -1,20 +1,20 @@
 {
   "name": "omedacity-js",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./index.js",
-      "require": "./index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
-  "main": "./index.js",
-  "module": "./index.js",
-  "schemas": "./index.d.ts",
-  "typings": "./src/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "schemas": "./dist/types.d.ts",
+  "typings": "./dist/types.d.ts",
   "files": [
-    "./**/**"
+    "./dist/**/*"
   ],
   "scripts": {
     "build": "tsc"
