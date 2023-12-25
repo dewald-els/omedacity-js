@@ -10,14 +10,26 @@
   "author": "MrBetaMax",
   "license": "MIT",
   "private": false,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/types/index.d.ts",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": {
+        "require": "./dist/types/index.d.ts",
+        "default": "./dist/types/index.d.ts"
+      },
+      "default": {
+        "require": "./dist/index.js",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/types/index.d.ts",
   "files": [
-    "src",
-    "dist"
+    "./src/**/*",
+    "./dist/**/*"
   ],
   "scripts": {
     "build": "tsc"
