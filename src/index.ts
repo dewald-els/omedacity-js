@@ -13,3 +13,5 @@ export class OmedaCityClient {
   playerMatches = new PlayerMatchesCollection();
   playerStatistics = new PlayerStatisticsCollection();
 }
+
+export * from "./types";
