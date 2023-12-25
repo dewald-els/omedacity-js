@@ -1,18 +1,22 @@
 {
   "name": "omedacity-js",
+  "description": "A simple JavaScript SDK to access the OmedaCity API.",
+  "keywords": [
+    "omedacity",
+    "predecessor",
+    "javascript",
+    "typescript"
+  ],
+  "author": "MrBetaMax",
+  "license": "MIT",
   "private": false,
   "version": "0.2.0",
   "type": "module",
-  "exports": {
-    ".": "./lib/index.js",
-    "./lib": "./lib/index.js",
-    "./types": "./lib/types/index.js"
-  },
-  "module": "./lib/index.js",
-  "schemas": "./lib/types/index.d.ts",
-  "typings": "./lib/types/index.d.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/types/index.d.ts",
   "files": [
-    "./lib/**/*"
+    "lib"
   ],
   "scripts": {
     "build": "tsc"
