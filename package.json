@@ -4,17 +4,15 @@
   "version": "0.2.0",
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
-    }
+    ".": "./lib/index.js",
+    "./lib": "./lib/index.js",
+    "./types": "./lib/types/index.js"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "schemas": "./dist/types/index.d.ts",
-  "typings": "./dist/types/index.d.ts",
+  "module": "./lib/index.js",
+  "schemas": "./lib/types/index.d.ts",
+  "typings": "./lib/types/index.d.ts",
   "files": [
-    "./dist/**/*"
+    "./lib/**/*"
   ],
   "scripts": {
     "build": "tsc"

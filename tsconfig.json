@@ -15,8 +15,6 @@
     "isolatedModules": true,
     "noEmit": false,
     "baseUrl": "./",
-    "paths": {},
-    "outDir": "dist",
     "declaration": true,
     "strict": true,
     "noUnusedLocals": true,
