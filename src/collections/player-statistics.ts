@@ -4,7 +4,7 @@ import { OmedaCity } from "../types";
 export class PlayerStatisticsCollection {
   /**
    * Get a Statistics for a Player by Player Id
-   * @param {string} playerId
+   * @param {OmedaCity.PlayerStatisticsOptions} options
    * @returns {Promise<OmedaCity.PlayerStatistics>}
    */
   getByPlayerId(

@@ -323,6 +323,28 @@ export namespace OmedaCity {
     max_wards_destroyed: number;
   }
 
+  export interface PlayerCommonTeammatesOptions {
+    playerId: string;
+    params?: PlayerCommonTeammatesQueryParams;
+  }
+
+  export interface PlayerCommonTeammatesQueryParams {
+    time_frame?: TimeFrame;
+    count?: number;
+  }
+
+  export interface PlayerCommonTeammates {
+    teammates: PlayerCommonTeammate[];
+  }
+
+  export interface PlayerCommonTeammate {
+    id: string;
+    display_name: string;
+    win_rate: number;
+    matches_played: number;
+    matches_percentage: number;
+  }
+
   export enum Roles {
     Offlane = "offlane",
     Jungle = "jungle",

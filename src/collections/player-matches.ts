@@ -4,7 +4,7 @@ import { OmedaCity } from "../types";
 export class PlayerMatchesCollection {
   /**
    * Get a matches for a Player by Player Id
-   * @param {string} playerId
+   * @param {OmedaCity.PlayerMatchesOptions} options
    * @returns {Promise<OmedaCity.Player>}
    */
   getByPlayerId(

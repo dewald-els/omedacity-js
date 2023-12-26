@@ -1,4 +1,4 @@
-import { findPlayerHeroStatisticsByPlayerIdWithClient } from "src/api/player-hero-statistics";
+import { findPlayerHeroStatisticsByPlayerIdWithClient } from "../api/player-hero-statistics";
 import { OmedaCity } from "../types";
 
 export class PlayerHeroStatisticsCollection {
