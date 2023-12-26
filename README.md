@@ -51,7 +51,7 @@ const players = await client.players.get({
 
 ```typescript
 import { OmedaCityClient } from "omedacity-js";
-import { OmedaCity } from "omedacity-js/types";
+import { Roles } from "omedacity-js/types";
 
 const client = new OmedaCityClient();
 
@@ -69,7 +69,7 @@ const playerMatches = await client.playerMatches.getByPlayerId({
 
 ```typescript
 import { OmedaCityClient } from "omedacity-js";
-import { OmedaCity } from "omedacity-js/types";
+import { TimeFrame } from "omedacity-js/types";
 
 const client = new OmedaCityClient();
 
@@ -84,8 +84,6 @@ const stats = await client.playerStatistics.getByPlayerId({
 ## Types
 
 Types are available to import from [`omedacity-js/types`](src/types/index.ts)
-
-All types are nested under the `OmedaCity` namespace. Therefore, you will always use it with the namespace qualifier:
 
 As an example, when using the Offlane Role: `Roles.Offlane`.
 
@@ -150,7 +148,7 @@ class OmedaCityClient {
 
 ## Collections
 
-Find the definitions for each collection in the [`collections`](./src//collections/) folder.
+Find the definitions for each collection in the [`collections`](./src/collections/) folder.
 
 ### Collection definitions
 
