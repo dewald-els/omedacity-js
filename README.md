@@ -1,9 +1,10 @@
 # OmedaCity JavaScript SDK (PREVIEW)
 
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white) ![Axios](https://img.shields.io/badge/axios-671ddf?&style=for-the-badge&logo=axios&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white) ![Axios](https://img.shields.io/badge/axios-671ddf?&style=for-the-badge&logo=axios&logoColor=white) [![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/omedacity-js)
 
 ## Table of Contents
 
+- [Install](#install)
 - [Examples](#examples)
 - [Types](#types)
 - [Enums](#enums)
@@ -14,6 +15,16 @@
 - [Credits](#credits)
 
 ## ⚠️ Please note, this is a work in progress and not ready for production
+
+## Install
+
+The package requires NodeJS 16+.
+
+### Install via npm
+
+```shell
+npm i omedacity-js
+```
 
 ## Examples
 
