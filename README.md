@@ -1,7 +1,8 @@
-# OmedaCity JavaScript SDK
+# OmedaCity JavaScript SDK (PREVIEW)
+
+## Please note, this is a work in progress and not ready for production.
 
 ## Examples
-
 
 ### Fetch Heroes
 
