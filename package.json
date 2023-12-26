@@ -38,7 +38,8 @@
     "./dist/**/*"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "node --test __tests__/"
   },
   "engines": {},
   "devDependencies": {
