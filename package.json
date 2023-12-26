@@ -15,7 +15,7 @@
     "url": "https://github.com/dewald-els/omedacity-js"
   },
   "private": false,
-  "version": "0.3.7",
+  "version": "0.3.9",
   "type": "module",
   "main": "./dist/index.js",
   "exports": {

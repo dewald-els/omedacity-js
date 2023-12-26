@@ -84,7 +84,7 @@ const stats = await client.playerStatistics.getByPlayerId({
 
 ## Types
 
-Types are available to import from [`omedacity-js/types`](./src/types/index.ts)
+Types are available to import from [`omedacity-js/types`](src/types/index.ts)
 
 All types are nested under the `OmedaCity` namespace. Therefore, you will always use it with the namespace qualifier:
 
