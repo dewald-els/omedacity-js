@@ -16,8 +16,8 @@
   "exports": {
     ".": {
       "types": {
-        "require": "./dist/types/index.d.ts",
-        "default": "./dist/types/index.d.ts"
+        "require": "./dist/index.d.ts",
+        "default": "./dist/index.d.ts"
       },
       "default": {
         "require": "./dist/index.js",

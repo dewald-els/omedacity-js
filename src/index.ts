@@ -4,6 +4,7 @@ import { MatchesCollection } from "./collections/matches";
 import { PlayerMatchesCollection } from "./collections/player-matches";
 import { PlayerStatisticsCollection } from "./collections/player-statistics";
 import { PlayersCollection } from "./collections/players";
+export * from "./types";
 
 export class OmedaCityClient {
   heroes = new HeroesCollection();
