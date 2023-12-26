@@ -345,6 +345,24 @@ export namespace OmedaCity {
     matches_percentage: number;
   }
 
+  export type Builds = Build[];
+
+  export interface Build {
+    id: number;
+    title: string;
+    description: string;
+    hero_id: number;
+    crest_id: number;
+    item1_id: number;
+    item2_id: number;
+    item3_id: number;
+    item4_id: number;
+    item5_id: number;
+    created_at: string;
+    updated_at: string;
+    url: string;
+  }
+
   export enum Roles {
     Offlane = "offlane",
     Jungle = "jungle",

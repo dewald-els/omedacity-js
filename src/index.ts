@@ -1,3 +1,4 @@
+import { BuildsCollection } from "./collections/builds";
 import { HeroesCollection } from "./collections/heroes";
 import { ItemsCollection } from "./collections/items";
 import { MatchesCollection } from "./collections/matches";
@@ -16,4 +17,5 @@ export class OmedaCityClient {
   playerStatistics = new PlayerStatisticsCollection();
   playerHeroStatistics = new PlayerHeroStatisticsCollection();
   playerCommonTeammates = new PlayerCommonTeammatesCollection();
+  builds = new BuildsCollection();
 }
