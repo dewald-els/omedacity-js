@@ -254,6 +254,75 @@ export namespace OmedaCity {
     updated_at: string;
   }
 
+  export interface PlayerHeroStatisticsOptions {
+    playerId: string;
+    params?: PlayerHeroStatisticsQueryParams;
+  }
+
+  export interface PlayerHeroStatisticsQueryParams {
+    hero_ids: string[];
+  }
+
+  export interface PlayerHeroStatistics {
+    hero_statistics: PlayerHeroStatistic[];
+  }
+
+  export interface PlayerHeroStatistic {
+    hero_id: number;
+    display_name: string;
+    match_count: number;
+    win_rate: number;
+    cs_min: number;
+    gold_min: number;
+    largest_killing_spree: number;
+    largest_multi_kill: number;
+    largest_critical_strike: number;
+    total_performance_score: number;
+    avg_performance_score: number;
+    max_performance_score: number;
+    kills: number;
+    avg_kills: number;
+    max_kills: number;
+    deaths: number;
+    avg_deaths: number;
+    max_deaths: number;
+    assists: number;
+    avg_assists: number;
+    max_assists: number;
+    avg_kdar: number;
+    max_kdar: number;
+    minions_killed: number;
+    avg_minions_killed: number;
+    max_minions_killed: number;
+    gold_earned: number;
+    avg_gold_earned: number;
+    max_gold_earned: number;
+    total_healing_done: number;
+    avg_healing_done: number;
+    max_healing_done: number;
+    total_damage_mitigated: number;
+    avg_damage_mitigated: number;
+    max_damage_mitigated: number;
+    total_damage_dealt_to_heroes: number;
+    avg_damage_dealt_to_heroes: number;
+    max_damage_dealt_to_heroes: number;
+    total_damage_taken_from_heroes: number;
+    avg_damage_taken_from_heroes: number;
+    max_damage_taken_from_heroes: number;
+    total_damage_dealt_to_structures: number;
+    avg_damage_dealt_to_structures: number;
+    max_damage_dealt_to_structures: number;
+    total_damage_dealt_to_objectives: number;
+    avg_damage_dealt_to_objectives: number;
+    max_damage_dealt_to_objectives: number;
+    wards_placed: number;
+    avg_wards_placed: number;
+    max_wards_placed: number;
+    wards_destroyed: number;
+    avg_wards_destroyed: number;
+    max_wards_destroyed: number;
+  }
+
   export enum Roles {
     Offlane = "offlane",
     Jungle = "jungle",
