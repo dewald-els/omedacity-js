@@ -2,6 +2,10 @@ import axios from "axios";
 
 export const client = axios.create({
   baseURL: "https://omeda.city",
+  headers: {
+    "Content-Type": "application/json",
+    "x-origin-sdk": "omedacity-js@0.4.5", // Todo: Automate the incrementation
+  },
 });
 
 /**
