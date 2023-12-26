@@ -6,7 +6,7 @@ import { OmedaCity } from "../types";
 
 export class PlayersCollection {
   /**
-   * Get all matches
+   * Get all Players
    * @returns {Promise<OmedaCity.Players>}
    */
   get(params?: OmedaCity.PlayersQueryParams): Promise<OmedaCity.Players> {
@@ -14,7 +14,7 @@ export class PlayersCollection {
   }
 
   /**
-   * Get a match by Id
+   * Get a Player by Id
    * @param {string} playerId
    * @returns {Promise<OmedaCity.Player>}
    */
