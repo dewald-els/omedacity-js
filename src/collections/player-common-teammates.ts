@@ -1,15 +1,15 @@
+import { PlayerCommonTeammates, PlayerCommonTeammatesOptions } from "../types";
 import { findPlayerCommonTeammatesByPlayerIdWithClient } from "../api/player-common-teammates";
-import { OmedaCity } from "../types";
 
 export class PlayerCommonTeammatesCollection {
   /**
    * Get a common teammates of a Player.
    * @param {PlayerCommonTeammatesOptions} options
-   * @returns {Promise<OmedaCity.PlayerCommonTeammates>}
+   * @returns {Promise<PlayerCommonTeammates>}
    */
   getByPlayerId(
-    options: OmedaCity.PlayerCommonTeammatesOptions
-  ): Promise<OmedaCity.PlayerCommonTeammates> {
+    options: PlayerCommonTeammatesOptions
+  ): Promise<PlayerCommonTeammates> {
     return findPlayerCommonTeammatesByPlayerIdWithClient(options);
   }
 }

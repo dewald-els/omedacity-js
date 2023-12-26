@@ -1,6 +1,6 @@
 import { Axios, AxiosResponse } from "axios";
 import { client, createQueryParams } from "./";
-import { OmedaCity } from "../types";
+import { PlayersQueryParams, Players, Matches, Player } from "src/types";
 
 /**
  * Find all Players
@@ -9,10 +9,10 @@ import { OmedaCity } from "../types";
  */
 const playersFindAll =
   (client: Axios) =>
-  (params?: OmedaCity.PlayersQueryParams): Promise<OmedaCity.Players> => {
-    const query = createQueryParams<OmedaCity.PlayersQueryParams>(params);
+  (params?: PlayersQueryParams): Promise<Players> => {
+    const query = createQueryParams<PlayersQueryParams>(params);
     return client
-      .get<OmedaCity.Matches>("/players.json" + query)
+      .get<Matches>("/players.json" + query)
       .then((response: AxiosResponse) => {
         const { data } = response;
         return data;
@@ -28,7 +28,7 @@ export const findPlayersWithClient = playersFindAll(client);
  */
 const playersFindById = (client: Axios) => (playerId: string) => {
   return client
-    .get<OmedaCity.Player>("/players/" + playerId + ".json")
+    .get<Player>("/players/" + playerId + ".json")
     .then((response: AxiosResponse) => {
       const { data } = response;
       return data;

@@ -6,7 +6,7 @@ export const client = axios.create({
 
 /**
  * Create Query Parameters for API Calls
- * @param params {OmedaCity.QueryParams}
+ * @param params {QueryParams}
  * @returns
  */
 export const createQueryParams = <T>(params?: T): string => {

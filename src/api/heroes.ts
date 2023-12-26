@@ -1,19 +1,17 @@
 import { Axios, AxiosResponse } from "axios";
 import { client } from "./";
-import { OmedaCity } from "../types";
+import { Heroes, Hero } from "src/types";
 
 /**
  * Find all heroes
  * @param {Axios} client
  * @returns
  */
-const heroesFindAll = (client: Axios) => (): Promise<OmedaCity.Heroes> => {
-  return client
-    .get<OmedaCity.Heroes>("/heroes.json")
-    .then((response: AxiosResponse) => {
-      const { data } = response;
-      return data;
-    });
+const heroesFindAll = (client: Axios) => (): Promise<Heroes> => {
+  return client.get<Heroes>("/heroes.json").then((response: AxiosResponse) => {
+    const { data } = response;
+    return data;
+  });
 };
 
 export const findHeroesWithClient = heroesFindAll(client);
@@ -25,7 +23,7 @@ export const findHeroesWithClient = heroesFindAll(client);
  */
 const heroesFindByName = (client: Axios) => (heroName: string) => {
   return client
-    .get<OmedaCity.Hero>("/heroes/" + heroName + ".json")
+    .get<Hero>("/heroes/" + heroName + ".json")
     .then((response: AxiosResponse) => {
       const { data } = response;
       return data;

@@ -1,24 +1,24 @@
+import { Player, Players, PlayersQueryParams } from "../types";
 import {
   findPlayerByIdWithClient,
   findPlayersWithClient,
 } from "../api/players";
-import { OmedaCity } from "../types";
 
 export class PlayersCollection {
   /**
    * Get all Players
-   * @returns {Promise<OmedaCity.Players>}
+   * @returns {Promise<Players>}
    */
-  get(params?: OmedaCity.PlayersQueryParams): Promise<OmedaCity.Players> {
+  get(params?: PlayersQueryParams): Promise<Players> {
     return findPlayersWithClient(params);
   }
 
   /**
    * Get a Player by Id
    * @param {string} playerId
-   * @returns {Promise<OmedaCity.Player>}
+   * @returns {Promise<Player>}
    */
-  getById(playerId: string): Promise<OmedaCity.Match> {
+  getById(playerId: string): Promise<Player> {
     return findPlayerByIdWithClient(playerId);
   }
 }

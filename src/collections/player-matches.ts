@@ -1,15 +1,13 @@
+import { Matches, PlayerMatchesOptions } from "../types";
 import { findPlayerMatchesByPlayerIdWithClient } from "../api/player-matches";
-import { OmedaCity } from "../types";
 
 export class PlayerMatchesCollection {
   /**
    * Get a matches for a Player by Player Id
-   * @param {OmedaCity.PlayerMatchesOptions} options
-   * @returns {Promise<OmedaCity.Player>}
+   * @param {PlayerMatchesOptions} options
+   * @returns {Promise<Matches>}
    */
-  getByPlayerId(
-    options: OmedaCity.PlayerMatchesOptions
-  ): Promise<OmedaCity.Matches> {
+  getByPlayerId(options: PlayerMatchesOptions): Promise<Matches> {
     return findPlayerMatchesByPlayerIdWithClient(options);
   }
 }

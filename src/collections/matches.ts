@@ -1,21 +1,21 @@
+import { ItemsQueryParams, Matches, Match } from "../types";
 import { findMatchByIdWithClient, findMatchesWithClient } from "../api/matches";
-import { OmedaCity } from "../types";
 
 export class MatchesCollection {
   /**
    * Get all matches
-   * @returns {Promise<OmedaCity.Matches>}
+   * @returns {Promise<Matches>}
    */
-  get(params?: OmedaCity.ItemsQueryParams): Promise<OmedaCity.Matches> {
+  get(params?: ItemsQueryParams): Promise<Matches> {
     return findMatchesWithClient(params);
   }
 
   /**
    * Get a match by Id
    * @param {string} matchId
-   * @returns {Promise<OmedaCity.Match>}
+   * @returns {Promise<Match>}
    */
-  getById(matchId: string): Promise<OmedaCity.Match> {
+  getById(matchId: string): Promise<Match> {
     return findMatchByIdWithClient(matchId);
   }
 }

@@ -1,6 +1,6 @@
 import { Axios, AxiosResponse } from "axios";
 import { client, createQueryParams } from "./";
-import { OmedaCity } from "../types";
+import { Match, Matches, MatchesQueryParams } from "src/types";
 
 /**
  * Find all matches
@@ -9,10 +9,10 @@ import { OmedaCity } from "../types";
  */
 const matchesFindAll =
   (client: Axios) =>
-  (params?: OmedaCity.MatchesQueryParams): Promise<OmedaCity.Matches> => {
-    const query = createQueryParams<OmedaCity.MatchesQueryParams>(params);
+  (params?: MatchesQueryParams): Promise<Matches> => {
+    const query = createQueryParams<MatchesQueryParams>(params);
     return client
-      .get<OmedaCity.Matches>("/matches.json" + query)
+      .get<Matches>("/matches.json" + query)
       .then((response: AxiosResponse) => {
         const { data } = response;
         return data;
@@ -28,7 +28,7 @@ export const findMatchesWithClient = matchesFindAll(client);
  */
 const matchesFindById = (client: Axios) => (matchId: string) => {
   return client
-    .get<OmedaCity.Match>("/matches/" + matchId + ".json")
+    .get<Match>("/matches/" + matchId + ".json")
     .then((response: AxiosResponse) => {
       const { data } = response;
       return data;

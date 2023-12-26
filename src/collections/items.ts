@@ -1,21 +1,21 @@
+import { ItemsQueryParams, Items, Hero } from "../types";
 import { findItemByNameWithClient, findItemsWithClient } from "../api/items";
-import { OmedaCity } from "../types";
 
 export class ItemsCollection {
   /**
    * Get all items
-   * @returns {Promise<OmedaCity.Items>}
+   * @returns {Promise<Items>}
    */
-  get(params?: OmedaCity.ItemsQueryParams): Promise<OmedaCity.Items> {
+  get(params?: ItemsQueryParams): Promise<Items> {
     return findItemsWithClient(params);
   }
 
   /**
    * Get a item by name
    * @param {string} name
-   * @returns {Promise<OmedaCity.Item>}
+   * @returns {Promise<Item>}
    */
-  getByName(name: string): Promise<OmedaCity.Hero> {
+  getByName(name: string): Promise<Hero> {
     return findItemByNameWithClient(name);
   }
 }

@@ -20,18 +20,17 @@
 ### Fetch Heroes
 
 ```typescript
-import { OmedaCityClient } from "omedacity-js"
+import { OmedaCityClient } from "omedacity-js";
 
 /**
  * Example implementation
  */
 const client = new OmedaCityClient();
 try {
-    const heroes = await client.heroes.get();
-    const hero = await client.heroes.getByName("Crunch");
-}
-catch(error) {
-    // Handle Error.
+  const heroes = await client.heroes.get();
+  const hero = await client.heroes.getByName("Crunch");
+} catch (error) {
+  // Handle Error.
 }
 ```
 
@@ -60,10 +59,10 @@ const playerMatches = await client.playerMatches.getByPlayerId({
   playerId: "1234", // Found from the players.get() response
   params: {
     match_filter: {
-      role: OmedaCity.Roles.Carry
-    }
-  }
-})
+      role: Roles.Carry,
+    },
+  },
+});
 ```
 
 ### Fetch Player Statistics
@@ -77,7 +76,7 @@ const client = new OmedaCityClient();
 const stats = await client.playerStatistics.getByPlayerId({
   playerId: "1234", // Found from the players.get() response
   params: {
-    time_frame: OmedaCity.TimeFrame.OneDay,
+    time_frame: TimeFrame.OneDay,
   },
 });
 ```
@@ -88,7 +87,7 @@ Types are available to import from [`omedacity-js/types`](src/types/index.ts)
 
 All types are nested under the `OmedaCity` namespace. Therefore, you will always use it with the namespace qualifier:
 
-As an example, when using the Offlane Role: `OmedaCity.Roles.Offlane`.
+As an example, when using the Offlane Role: `Roles.Offlane`.
 
 ## Enums
 
@@ -97,13 +96,13 @@ As an example, when using the Offlane Role: `OmedaCity.Roles.Offlane`.
 The Roles type can be used to pass to the query parameter `role`.
 
 ```typescript
-  enum Roles {
-    Offlane = "offlane",
-    Jungle = "jungle",
-    Midlane = "midlane",
-    Carry = "carry",
-    Support = "support",
-  }
+enum Roles {
+  Offlane = "offlane",
+  Jungle = "jungle",
+  Midlane = "midlane",
+  Carry = "carry",
+  Support = "support",
+}
 ```
 
 ### TimeFrame
@@ -111,16 +110,16 @@ The Roles type can be used to pass to the query parameter `role`.
 The `TimeFrame` type can be used to pass to the query parameter `time_frame`.
 
 ```typescript
-  enum TimeFrame {
-    All = "ALL",
-    ThreeMonths = "3M",
-    TwoMonths = "2M",
-    OneMonth = "1M",
-    OneDay = "1D",
-    OneWeek = "1W",
-    TwoWeeks = "2W",
-    ThreeWeeks = "3W",
-  }
+enum TimeFrame {
+  All = "ALL",
+  ThreeMonths = "3M",
+  TwoMonths = "2M",
+  OneMonth = "1M",
+  OneDay = "1D",
+  OneWeek = "1W",
+  TwoWeeks = "2W",
+  ThreeWeeks = "3W",
+}
 ```
 
 ## OmedaCityClient
@@ -157,48 +156,50 @@ Find the definitions for each collection in the [`collections`](./src//collectio
 
 ```typescript
 interface HeroesCollection {
-  get(): Promise<OmedaCity.Heroes>;
-  getByName(name: string): Promise<OmedaCity.Hero>;
+  get(): Promise<Heroes>;
+  getByName(name: string): Promise<Hero>;
 }
 
 interface BuildsCollection {
-  get(): Promise<OmedaCity.Builds>;
-  getById(buildId: string): Promise<OmedaCity.Build>;
+  get(): Promise<Builds>;
+  getById(buildId: string): Promise<Build>;
 }
 
 interface ItemsCollection {
-  get(params?: OmedaCity.ItemsQueryParams): Promise<OmedaCity.Items>;
-  getByName(name: string): Promise<OmedaCity.Hero>;
+  get(params?: ItemsQueryParams): Promise<Items>;
+  getByName(name: string): Promise<Hero>;
 }
 
 interface MatchesCollection {
-  get(params?: OmedaCity.ItemsQueryParams): Promise<OmedaCity.Matches>
-  getById(matchId: string): Promise<OmedaCity.Match>;
+  get(params?: ItemsQueryParams): Promise<Matches>;
+  getById(matchId: string): Promise<Match>;
 }
 
 interface PlayerCommonTeammatesCollection {
-  getByPlayerId(options: OmedaCity.PlayerCommonTeammatesOptions): Promise<OmedaCity.PlayerCommonTeammates>;
+  getByPlayerId(
+    options: PlayerCommonTeammatesOptions
+  ): Promise<PlayerCommonTeammates>;
 }
 
 interface PlayerHeroStatisticsCollection {
-  getByPlayerId(options: OmedaCity.PlayerHeroStatisticsOptions): Promise<OmedaCity.PlayerHeroStatistics>;
+  getByPlayerId(
+    options: PlayerHeroStatisticsOptions
+  ): Promise<PlayerHeroStatistics>;
 }
 
 interface PlayerMatchesCollection {
-  getByPlayerId(options: OmedaCity.PlayerMatchesOptions): Promise<OmedaCity.Matches>;
+  getByPlayerId(options: PlayerMatchesOptions): Promise<Matches>;
 }
 
 interface PlayerStatisticsCollection {
-  getByPlayerId(options: OmedaCity.PlayerStatisticsOptions): Promise<OmedaCity.PlayerStatistics>;
+  getByPlayerId(options: PlayerStatisticsOptions): Promise<PlayerStatistics>;
 }
 
 interface PlayersCollection {
-  get(params?: OmedaCity.PlayersQueryParams): Promise<OmedaCity.Players>;
-  getById(playerId: string): Promise<OmedaCity.Match>;
+  get(params?: PlayersQueryParams): Promise<Players>;
+  getById(playerId: string): Promise<Match>;
 }
 ```
-
-
 
 ## License
 
@@ -210,5 +211,5 @@ interface PlayersCollection {
 
 ## Credits
 
-- Thanks to the devs at [https://omedacity.com](https://omedacity.com) for providing a public API. 
+- Thanks to the devs at [https://com](https://com) for providing a public API.
 - Thanks to [@bslie](https://github.com/bslie) for taking initiative to create the [C# SDK](https://github.com/bslie/OmedaCity).

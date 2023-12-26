@@ -1,6 +1,6 @@
 import { Axios, AxiosResponse } from "axios";
 import { client, createQueryParams } from ".";
-import { OmedaCity } from "../types";
+import { PlayerCommonTeammatesOptions, PlayerCommonTeammates } from "src/types";
 
 /**
  * Find Player by Id
@@ -8,16 +8,16 @@ import { OmedaCity } from "../types";
  * @returns
  */
 const playerCommonTeammatesFindByPlayerId =
-  (client: Axios) => (options: OmedaCity.PlayerCommonTeammatesOptions) => {
+  (client: Axios) => (options: PlayerCommonTeammatesOptions) => {
     const { playerId, params } = options;
     const query = createQueryParams(params);
     return client
-      .get<OmedaCity.PlayerCommonTeammates>(
+      .get<PlayerCommonTeammates>(
         "/players/" + playerId + "/common_teammates.json" + query
       )
       .then((response: AxiosResponse) => {
         const { data } = response;
-        return data as OmedaCity.PlayerCommonTeammates;
+        return data as PlayerCommonTeammates;
       });
   };
 

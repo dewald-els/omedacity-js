@@ -203,7 +203,7 @@ export interface Player {
 
 export interface PlayerMatchesOptions {
   playerId: string;
-  params?: OmedaCity.PlayerMatchesQueryParams;
+  params?: PlayerMatchesQueryParams;
 }
 
 export interface PlayerMatchesQueryParams {

@@ -29,10 +29,19 @@
         "default": "./dist/index.js"
       }
     },
-    "./types": "./dist/types/index.d.ts",
+    "./types": {
+      "types": {
+        "require": "./dist/types/index.js",
+        "default": "./dist/types/index.js"
+      },
+      "default": {
+        "require": "./dist/types/index.js",
+        "default": "./dist/types/index.js"
+      }
+    },
     "./package.json": "./package.json"
   },
-  "types": "./dist/types/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "./src/**/*",
     "./dist/**/*"

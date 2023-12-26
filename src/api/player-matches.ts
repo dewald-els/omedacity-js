@@ -1,6 +1,6 @@
 import { Axios, AxiosResponse } from "axios";
 import { client, createQueryParams } from ".";
-import { OmedaCity } from "../types";
+import { PlayerMatchesOptions, Matches } from "src/types";
 
 /**
  * Find Player by Id
@@ -8,14 +8,14 @@ import { OmedaCity } from "../types";
  * @returns
  */
 const playerMatchesFindByPlayerId =
-  (client: Axios) => (options: OmedaCity.PlayerMatchesOptions) => {
+  (client: Axios) => (options: PlayerMatchesOptions) => {
     const { playerId, params } = options;
     const query = createQueryParams(params);
     return client
-      .get<OmedaCity.Matches>("/players/" + playerId + "/matches.json" + query)
+      .get<Matches>("/players/" + playerId + "/matches.json" + query)
       .then((response: AxiosResponse) => {
         const { data } = response;
-        return data as OmedaCity.Matches;
+        return data as Matches;
       });
   };
 

@@ -1,21 +1,21 @@
+import { Builds, Build } from "../types";
 import { findBuildByIdWithClient, findBuildsWithClient } from "../api/builds";
-import { OmedaCity } from "../types";
 
 export class BuildsCollection {
   /**
    * Get all Builds
-   * @returns {Promise<OmedaCity.Builds>}
+   * @returns {Promise<Builds>}
    */
-  get(): Promise<OmedaCity.Builds> {
+  get(): Promise<Builds> {
     return findBuildsWithClient();
   }
 
   /**
    * Get a Build by BuildId
    * @param {string} buildId
-   * @returns {Promise<OmedaCity.Build>}
+   * @returns {Promise<Build>}
    */
-  getById(buildId: string): Promise<OmedaCity.Build> {
+  getById(buildId: string): Promise<Build> {
     return findBuildByIdWithClient(buildId);
   }
 }
