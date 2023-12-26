@@ -11,7 +11,7 @@ export class ItemsCollection {
   }
 
   /**
-   * Get a item by name
+   * Get an item by name
    * @param {string} name
    * @returns {Promise<Item>}
    */
