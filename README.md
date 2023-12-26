@@ -220,5 +220,5 @@ interface PlayersCollection {
 
 ## Credits
 
-- Thanks to the devs at [https://com](https://com) for providing a public API.
+- Thanks to the devs at [https://omedacity.com](https://omedacity.com) for providing a public API.
 - Thanks to [@bslie](https://github.com/bslie) for taking initiative to create the [C# SDK](https://github.com/bslie/OmedaCity).
