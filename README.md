@@ -26,7 +26,8 @@ catch(error) {
 ### Fetch Player Matches
 
 ```typescript
-import { OmedaCityClient, OmedaCity } from "omedacity-js";
+import { OmedaCityClient } from "omedacity-js";
+import { OmedaCity } from "omedacity-js/types";
 
 const client = new OmedaCityClient();
 
@@ -43,7 +44,8 @@ client.playerMatches.getByPlayerId({
 ### Fetch Player Statistics
 
 ```typescript
-import { OmedaCityClient, OmedaCity } from "omedacity-js";
+import { OmedaCityClient } from "omedacity-js";
+import { OmedaCity } from "omedacity-js/types";
 
 const client = new OmedaCityClient();
 
