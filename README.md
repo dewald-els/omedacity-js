@@ -9,6 +9,7 @@
 - [License](#license)
 - [Author](#author)
 - [Credits](#credits)
+- [Issues](#issues)
 
 ## ⚠️ Please note, this is in Beta and the implementation can change
 
@@ -54,3 +55,7 @@ Please see the [Collections Documentation](./docs/collections/README.md) for exa
 
 - Thanks to the devs at [https://omedacity.com](https://omedacity.com) for providing a public API.
 - Thanks to [@bslie](https://github.com/bslie) for taking initiative to create the [C# SDK](https://github.com/bslie/OmedaCity).
+
+## Issues
+
+- [Github Issues](https://github.com/dewald-els/omedacity-js/issues)
