@@ -1,6 +1,6 @@
 import { Axios, AxiosResponse } from "axios";
 import { client } from "./";
-import { Heroes, Hero } from "src/types";
+import { Heroes, Hero } from "../types";
 
 /**
  * Find all heroes

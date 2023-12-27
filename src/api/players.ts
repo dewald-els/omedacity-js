@@ -1,6 +1,6 @@
 import { Axios, AxiosResponse } from "axios";
 import { client, createQueryParams } from "./";
-import { PlayersQueryParams, Players, Matches, Player } from "src/types";
+import { PlayersQueryParams, Players, Matches, Player } from "../types";
 
 /**
  * Find all Players

@@ -1,6 +1,6 @@
 import { Axios, AxiosResponse } from "axios";
 import { client, createQueryParams } from ".";
-import { PlayerHeroStatisticsOptions, PlayerHeroStatistics } from "src/types";
+import { PlayerHeroStatisticsOptions, PlayerHeroStatistics } from "../types";
 
 /**
  * Find Player Hero Statistics by Player Id

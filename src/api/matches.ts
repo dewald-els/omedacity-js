@@ -1,6 +1,6 @@
 import { Axios, AxiosResponse } from "axios";
 import { client, createQueryParams } from "./";
-import { Match, Matches, MatchesQueryParams } from "src/types";
+import { Match, Matches, MatchesQueryParams } from "../types";
 
 /**
  * Find all matches

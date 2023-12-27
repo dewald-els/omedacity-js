@@ -1,6 +1,6 @@
 import { Axios, AxiosResponse } from "axios";
 import { client, createQueryParams } from ".";
-import { PlayerCommonTeammatesOptions, PlayerCommonTeammates } from "src/types";
+import { PlayerCommonTeammatesOptions, PlayerCommonTeammates } from "../types";
 
 /**
  * Find Player by Id
