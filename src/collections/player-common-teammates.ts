@@ -1,6 +1,9 @@
 import { PlayerCommonTeammates, PlayerCommonTeammatesOptions } from "../types";
-import { findPlayerCommonTeammatesByPlayerIdWithClient } from "../api/player-common-teammates";
+import { playerCommonTeammatesFindByPlayerId } from "../api/player-common-teammates";
+import { client } from "../api";
 
+const findPlayerCommonTeammatesByPlayerIdWithClient =
+  playerCommonTeammatesFindByPlayerId(client);
 export class PlayerCommonTeammatesCollection {
   /**
    * Get a common teammates of a Player.

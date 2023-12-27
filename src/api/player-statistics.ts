@@ -1,5 +1,5 @@
 import { Axios, AxiosResponse } from "axios";
-import { client, createQueryParams } from ".";
+import { createQueryParams } from ".";
 import { PlayerMatchesOptions, PlayerStatistics } from "../types";
 
 /**
@@ -7,7 +7,7 @@ import { PlayerMatchesOptions, PlayerStatistics } from "../types";
  * @param {Axios} client
  * @returns
  */
-const playerStatisticsFindByPlayerId =
+export const playerStatisticsFindByPlayerId =
   (client: Axios) => (options: PlayerMatchesOptions) => {
     const { playerId, params } = options;
     const query = createQueryParams(params);
@@ -20,6 +20,3 @@ const playerStatisticsFindByPlayerId =
         return data as PlayerStatistics;
       });
   };
-
-export const findPlayerStatisticsByPlayerIdWithClient =
-  playerStatisticsFindByPlayerId(client);

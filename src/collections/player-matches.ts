@@ -1,5 +1,9 @@
 import { Matches, PlayerMatchesOptions } from "../types";
-import { findPlayerMatchesByPlayerIdWithClient } from "../api/player-matches";
+import { playerMatchesFindByPlayerId } from "../api/player-matches";
+import { client } from "../api";
+
+const findPlayerMatchesByPlayerIdWithClient =
+  playerMatchesFindByPlayerId(client);
 
 export class PlayerMatchesCollection {
   /**

@@ -1,9 +1,9 @@
 import { Player, Players, PlayersQueryParams } from "../types";
-import {
-  findPlayerByIdWithClient,
-  findPlayersWithClient,
-} from "../api/players";
+import { playersFindAll, playersFindById } from "../api/players";
+import { client } from "../api";
 
+const findPlayersWithClient = playersFindAll(client);
+const findPlayerByIdWithClient = playersFindById(client);
 export class PlayersCollection {
   /**
    * Get all Players
