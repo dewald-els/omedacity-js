@@ -29,6 +29,6 @@ export const playersFindById = (client: Axios) => (playerId: string) => {
     .get<Player>("/players/" + playerId + ".json")
     .then((response: AxiosResponse) => {
       const { data } = response;
-      return data;
+      return data as Player;
     });
 };

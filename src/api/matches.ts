@@ -29,6 +29,6 @@ export const matchesFindById = (client: Axios) => (matchId: string) => {
     .get<Match>("/matches/" + matchId + ".json")
     .then((response: AxiosResponse) => {
       const { data } = response;
-      return data;
+      return data as Match;
     });
 };

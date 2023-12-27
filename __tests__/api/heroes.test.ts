@@ -53,5 +53,5 @@ it("should find a hero by name", async () => {
   const withClient = heroesFindByName(client);
   const response = await withClient("Crunch");
   expect(response).toEqual(expected);
-  expect(response.name).toBe(expected.name);
+  expect(response.name).toBe("Crunch");
 });

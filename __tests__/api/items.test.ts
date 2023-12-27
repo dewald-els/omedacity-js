@@ -1,8 +1,9 @@
 import { itemsFindAll, itemsFindByName } from "../../src/api/items";
 import { mockAxios } from "../../mocks/axios";
+import { Item, Items } from "../../src/types";
 
-it("should find the heroes", async () => {
-  const expected = [
+it("should find the items", async () => {
+  const expected: Items = [
     {
       id: 1,
       game_id: 1,
@@ -55,23 +56,33 @@ it("should find the heroes", async () => {
   expect(response).toEqual(expected);
 });
 
-it("should find a hero by name", async () => {
-  const expected = {
+it("should find a item by name", async () => {
+  const expected: Item = {
     id: 2,
     game_id: 2,
-    name: "Crunch",
-    display_name: "Crunch",
+    name: "Item 2",
+    display_name: "Item 2",
     image: "https://image.url",
-    stats: [3, 4, 5],
-    classes: ["class3", "class4"],
-    roles: ["role3", "role4"],
-    abilities: [],
-    base_stats: [],
+    price: 100,
+    total_price: 100,
+    slot_type: "slot",
+    rarity: "rarity",
+    aggression_type: "type",
+    hero_class: "class",
+    required_level: 2,
+    effects: [],
+    requirements: [],
+    build_paths: [],
+    stats: {
+      magical_power: 20,
+      magical_penetration: 20,
+      health_regeneration: 30,
+    },
   };
 
   const client = mockAxios(expected);
   const withClient = itemsFindByName(client);
-  const response = await withClient("Item 1");
+  const response = await withClient("Item 2");
   expect(response).toEqual(expected);
   expect(response.name).toBe(expected.name);
 });

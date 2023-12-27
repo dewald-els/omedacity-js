@@ -1,13 +1,14 @@
 import { buildsFindAll, buildsFindById } from "../../src/api/builds";
 import { mockAxios } from "../../mocks/axios";
+import { Build, Builds } from "../../src/types";
 
 it("should find the builds", async () => {
-  const expected = [
+  const expected: Builds = [
     {
       id: 1,
       title: "Test Item",
       description: "Test Item",
-      hero_id: "1",
+      hero_id: 1,
       crest_id: 1,
       item1_id: 1,
       item2_id: 2,
@@ -22,7 +23,7 @@ it("should find the builds", async () => {
       id: 2,
       title: "Test Item 2",
       description: "Test Item 2",
-      hero_id: "2",
+      hero_id: 2,
       crest_id: 2,
       item1_id: 3,
       item2_id: 4,
@@ -43,11 +44,11 @@ it("should find the builds", async () => {
 });
 
 it("should find a build by Id", async () => {
-  const expected = {
+  const expected: Build = {
     id: 1,
     title: "Test Item",
     description: "Test Item",
-    hero_id: "1",
+    hero_id: 1,
     crest_id: 1,
     item1_id: 1,
     item2_id: 2,
@@ -63,4 +64,5 @@ it("should find a build by Id", async () => {
   const withClient = buildsFindById(client);
   const response = await withClient("1");
   expect(response).toEqual(expected);
+  expect(response.title).toBe("Test Item");
 });
