@@ -1,5 +1,5 @@
 import { Axios, AxiosResponse } from "axios";
-import { createQueryParams } from "./";
+import { createQueryParams } from "./index";
 import { PlayersQueryParams, Players, Matches, Player } from "../types";
 
 /**

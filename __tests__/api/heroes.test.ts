@@ -1,7 +1,5 @@
-import { it } from "node:test";
-import assert from "node:assert";
-import { heroesFindAll, heroesFindByName } from "../../dist/api/heroes.js";
-import { mockAxios } from "../mocks/axios.js";
+import { heroesFindAll, heroesFindByName } from "../../src/api/heroes";
+import { mockAxios } from "../../mocks/axios";
 
 it("should find the heroes", async () => {
   const expected = [
@@ -34,7 +32,7 @@ it("should find the heroes", async () => {
   const client = mockAxios(expected);
   const withClient = heroesFindAll(client);
   const response = await withClient();
-  assert.deepEqual(response, expected);
+  expect(response).toEqual(expected);
 });
 
 it("should find a hero by name", async () => {
@@ -53,7 +51,7 @@ it("should find a hero by name", async () => {
 
   const client = mockAxios(expected);
   const withClient = heroesFindByName(client);
-  const response = await withClient();
-  assert.deepEqual(response, expected);
-  assert.strictEqual(response.name, expected.name);
+  const response = await withClient("Crunch");
+  expect(response).toEqual(expected);
+  expect(response.name).toBe(expected.name);
 });

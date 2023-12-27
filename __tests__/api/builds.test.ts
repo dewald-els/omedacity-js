@@ -1,7 +1,5 @@
-import { it } from "node:test";
-import assert from "node:assert";
-import { buildsFindAll, buildsFindById } from "../../dist/api/builds.js";
-import { mockAxios } from "../mocks/axios.js";
+import { buildsFindAll, buildsFindById } from "../../src/api/builds";
+import { mockAxios } from "../../mocks/axios";
 
 it("should find the builds", async () => {
   const expected = [
@@ -40,8 +38,8 @@ it("should find the builds", async () => {
   const client = mockAxios(expected);
   const withClient = buildsFindAll(client);
   const response = await withClient();
-  assert.deepEqual(response, expected);
-  assert.strictEqual(response.length, expected.length);
+  expect(response).toEqual(expected);
+  expect(response.length).toBe(expected.length);
 });
 
 it("should find a build by Id", async () => {
@@ -63,6 +61,6 @@ it("should find a build by Id", async () => {
 
   const client = mockAxios(expected);
   const withClient = buildsFindById(client);
-  const response = await withClient();
-  assert.deepEqual(response, expected);
+  const response = await withClient("1");
+  expect(response).toEqual(expected);
 });
