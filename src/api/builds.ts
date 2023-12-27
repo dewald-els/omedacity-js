@@ -1,5 +1,5 @@
 import { Axios, AxiosResponse } from "axios";
-import { Build, Builds, Heroes } from "../types";
+import { Build, Builds } from "../types";
 
 /**
  * Find all builds
@@ -7,7 +7,7 @@ import { Build, Builds, Heroes } from "../types";
  * @returns
  */
 export const buildsFindAll = (client: Axios) => (): Promise<Builds> => {
-  return client.get<Heroes>("/builds.json").then((response: AxiosResponse) => {
+  return client.get<Builds>("/builds.json").then((response: AxiosResponse) => {
     const { data } = response;
     return data as Builds;
   });

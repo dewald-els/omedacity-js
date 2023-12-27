@@ -1,4 +1,4 @@
-import { ItemsQueryParams, Items, Hero } from "../types";
+import { ItemsQueryParams, Items, Item } from "../types";
 import { itemsFindAll, itemsFindByName } from "../api/items";
 import { client } from "../api";
 
@@ -19,7 +19,7 @@ export class ItemsCollection {
    * @param {string} name
    * @returns {Promise<Item>}
    */
-  getByName(name: string): Promise<Hero> {
+  getByName(name: string): Promise<Item> {
     return findItemByNameWithClient(name);
   }
 }
