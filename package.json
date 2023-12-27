@@ -47,7 +47,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "node --test __tests__/"
+    "test": "node --test __tests__/",
+    "clean": "rm -rf ./dist && rm -rf node_modules"
   },
   "engines": {},
   "devDependencies": {
