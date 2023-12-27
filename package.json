@@ -12,10 +12,10 @@
   "repository": {
     "type": "git",
     "directory": "src",
-    "url": "https://github.com/dewald-els/omedacity-js"
+    "url": "git+https://github.com/dewald-els/omedacity-js.git"
   },
   "private": false,
-  "version": "0.4.7",
+  "version": "0.5.0",
   "type": "module",
   "main": "./dist/index.js",
   "exports": {
