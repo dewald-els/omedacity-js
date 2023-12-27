@@ -1,5 +1,9 @@
 import { PlayerStatistics, PlayerStatisticsOptions } from "../types";
-import { findPlayerStatisticsByPlayerIdWithClient } from "../api/player-statistics";
+import { playerStatisticsFindByPlayerId } from "../api/player-statistics";
+import { client } from "../api";
+
+const findPlayerStatisticsByPlayerIdWithClient =
+  playerStatisticsFindByPlayerId(client);
 
 export class PlayerStatisticsCollection {
   /**

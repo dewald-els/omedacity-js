@@ -1,5 +1,5 @@
 import { Axios, AxiosResponse } from "axios";
-import { client, createQueryParams } from "./";
+import { createQueryParams } from "./index";
 import { Match, Matches, MatchesQueryParams } from "../types";
 
 /**
@@ -7,7 +7,7 @@ import { Match, Matches, MatchesQueryParams } from "../types";
  * @param {Axios} client
  * @returns
  */
-const matchesFindAll =
+export const matchesFindAll =
   (client: Axios) =>
   (params?: MatchesQueryParams): Promise<Matches> => {
     const query = createQueryParams<MatchesQueryParams>(params);
@@ -19,20 +19,16 @@ const matchesFindAll =
       });
   };
 
-export const findMatchesWithClient = matchesFindAll(client);
-
 /**
  * Find Match by Id
  * @param {Axios} client
  * @returns
  */
-const matchesFindById = (client: Axios) => (matchId: string) => {
+export const matchesFindById = (client: Axios) => (matchId: string) => {
   return client
     .get<Match>("/matches/" + matchId + ".json")
     .then((response: AxiosResponse) => {
       const { data } = response;
-      return data;
+      return data as Match;
     });
 };
-
-export const findMatchByIdWithClient = matchesFindById(client);

@@ -1,6 +1,9 @@
 import { Heroes, Hero } from "../types";
-import { findHeroByNameWithClient, findHeroesWithClient } from "../api/heroes";
+import { heroesFindAll, heroesFindByName } from "../api/heroes";
+import { client } from "../api";
 
+const findHeroByNameWithClient = heroesFindByName(client);
+const findHeroesWithClient = heroesFindAll(client);
 export class HeroesCollection {
   /**
    * Get all heroes
