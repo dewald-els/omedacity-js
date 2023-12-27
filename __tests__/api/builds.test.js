@@ -18,7 +18,22 @@ it("should find the builds", async () => {
       item5_id: 5,
       created_at: "2023-12-12",
       updated_at: "2023-12-12",
-      url: "",
+      url: "https://example1.com",
+    },
+    {
+      id: 2,
+      title: "Test Item 2",
+      description: "Test Item 2",
+      hero_id: "2",
+      crest_id: 2,
+      item1_id: 3,
+      item2_id: 4,
+      item3_id: 5,
+      item4_id: 6,
+      item5_id: 5,
+      created_at: "2023-12-12",
+      updated_at: "2023-12-12",
+      url: "https://example1.com",
     },
   ];
 
@@ -26,6 +41,7 @@ it("should find the builds", async () => {
   const withClient = buildsFindAll(client);
   const response = await withClient();
   assert.deepEqual(response, expected);
+  assert.strictEqual(response.length, expected.length);
 });
 
 it("should find a build by Id", async () => {
