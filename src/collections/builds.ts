@@ -1,5 +1,9 @@
 import { Builds, Build } from "../types";
-import { findBuildByIdWithClient, findBuildsWithClient } from "../api/builds";
+import { buildsFindAll, buildsFindById } from "../api/builds";
+import { client } from "src/api";
+
+const findBuildsWithClient = buildsFindAll(client);
+const findBuildByIdWithClient = buildsFindById(client);
 
 export class BuildsCollection {
   /**
