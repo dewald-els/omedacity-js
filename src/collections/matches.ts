@@ -1,5 +1,9 @@
 import { ItemsQueryParams, Matches, Match } from "../types";
-import { findMatchByIdWithClient, findMatchesWithClient } from "../api/matches";
+import { matchesFindAll, matchesFindById } from "../api/matches";
+import { client } from "../api";
+
+const findMatchByIdWithClient = matchesFindById(client);
+const findMatchesWithClient = matchesFindAll(client);
 
 export class MatchesCollection {
   /**
