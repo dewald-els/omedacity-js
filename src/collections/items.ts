@@ -1,5 +1,9 @@
 import { ItemsQueryParams, Items, Hero } from "../types";
-import { findItemByNameWithClient, findItemsWithClient } from "../api/items";
+import { itemsFindAll, itemsFindByName } from "../api/items";
+import { client } from "../api";
+
+const findItemByNameWithClient = itemsFindByName(client);
+const findItemsWithClient = itemsFindAll(client);
 
 export class ItemsCollection {
   /**

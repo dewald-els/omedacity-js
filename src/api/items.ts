@@ -7,7 +7,7 @@ import { ItemsQueryParams, Items, Item } from "../types";
  * @param {Axios} client
  * @returns
  */
-const itemsFindAll =
+export const itemsFindAll =
   (client: Axios) =>
   (params?: ItemsQueryParams): Promise<Items> => {
     const query = createQueryParams<ItemsQueryParams>(params);
@@ -19,14 +19,12 @@ const itemsFindAll =
       });
   };
 
-export const findItemsWithClient = itemsFindAll(client);
-
 /**
  * Find Item by name
  * @param {Axios} client
  * @returns
  */
-const itemsFindByName = (client: Axios) => (itemName: string) => {
+export const itemsFindByName = (client: Axios) => (itemName: string) => {
   return client
     .get<Item>("/items/" + itemName + ".json")
     .then((response: AxiosResponse) => {
@@ -34,5 +32,3 @@ const itemsFindByName = (client: Axios) => (itemName: string) => {
       return data;
     });
 };
-
-export const findItemByNameWithClient = itemsFindByName(client);

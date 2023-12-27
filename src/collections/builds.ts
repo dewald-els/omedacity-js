@@ -1,6 +1,6 @@
 import { Builds, Build } from "../types";
 import { buildsFindAll, buildsFindById } from "../api/builds";
-import { client } from "src/api";
+import { client } from "../api";
 
 const findBuildsWithClient = buildsFindAll(client);
 const findBuildByIdWithClient = buildsFindById(client);
