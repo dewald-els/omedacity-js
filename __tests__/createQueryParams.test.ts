@@ -21,6 +21,17 @@ it("should ignore values set to false", () => {
   expect(hasModulesInQuery).toBe(-1);
 });
 
+it("should not ignore 0 values", () => {
+  const params = createQueryParams({
+    filter: {
+      include_inactive: 0,
+    },
+  });
+
+  const hasZeroValueInQuery = params.indexOf("include_inactive");
+  expect(hasZeroValueInQuery).toBeGreaterThan(0);
+});
+
 it("should create a multiple params", () => {
   const params = createQueryParams({
     time_frame: "1D",

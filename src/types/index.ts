@@ -180,8 +180,9 @@ export interface Flag {
 
 export type PlayersQueryParams = {
   page?: string;
-  q?: {
-    name: string;
+  filter?: {
+    name?: string;
+    include_inactive: 0 | 1;
   };
 };
 
