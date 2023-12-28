@@ -19,3 +19,12 @@ export class OmedaCityClient {
   playerCommonTeammates = new PlayerCommonTeammatesCollection();
   builds = new BuildsCollection();
 }
+
+const client = new OmedaCityClient();
+client.builds.get({
+  page: 1,
+  filter: {
+    hero_id: 1,
+    modules: false,
+  },
+});

@@ -39,7 +39,7 @@ export interface BaseStats {
 
 export type ItemsQueryParams = {
   cursor?: string;
-  matches_per_page?: number;
+  per_page?: number;
 };
 
 export type Items = Item[];
@@ -95,7 +95,7 @@ export interface ItemStats {
 
 export type MatchesQueryParams = {
   cursor?: string;
-  matches_per_page?: number;
+  per_page?: number;
 };
 
 export interface Matches {
@@ -209,8 +209,8 @@ export interface PlayerMatchesOptions {
 export interface PlayerMatchesQueryParams {
   time_frame?: TimeFrame;
   page?: number;
-  matches_per_page?: number;
-  match_filter?: {
+  per_page?: number;
+  filter?: {
     hero_id?: string;
     role?: Roles;
     occuring_hero_id?: string;
@@ -346,20 +346,52 @@ export interface PlayerCommonTeammate {
 
 export type Builds = Build[];
 
+export enum SortingOrder {
+  Latest = "latest",
+  Trending = "trending",
+  Popular = "popular",
+}
+export interface BuildsQueryParams {
+  page: number;
+  filter?: {
+    hero_id?: number;
+    role?: Roles;
+    name?: string;
+    skill_order?: boolean;
+    modules?: boolean;
+    order?: SortingOrder;
+  };
+}
+
 export interface Build {
   id: number;
   title: string;
   description: string;
-  hero_id: number;
+  hero_id?: number;
+  role?: string;
   crest_id: number;
-  item1_id: number;
-  item2_id: number;
-  item3_id: number;
-  item4_id: number;
-  item5_id: number;
+  item1_id: number | null;
+  item2_id: number | null;
+  item3_id: number | null;
+  item4_id: number | null;
+  item5_id: number | null;
+  skill_order: number[];
+  upvotes_count: number;
+  downvotes_count: number;
   created_at: string;
   updated_at: string;
-  url: string;
+  author: string;
+  modules?: BuildModule[];
+}
+
+export interface BuildModule {
+  title: string;
+  item1_id: number | null;
+  item2_id: number | null;
+  item3_id: number | null;
+  item4_id: number | null;
+  item5_id: number | null;
+  item6_id: number | null;
 }
 
 export enum Roles {

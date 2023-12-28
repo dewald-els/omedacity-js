@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0] - 2023-12-28 MrBetaMax <dewaldifels@gmail.com>
+
+    Added new Build endpoint definitions, fixed typing for params
+
+    * api/builds.ts, collections/builds.ts - Changed id param to number
+    * types/index.ts added new Build interface and SortingOrder enum
+
 ## [0.5.2] - 2023-12-27 MrBetaMax <dewaldifels@gmail.com>
 
     Add Changelog and Issue Tracking

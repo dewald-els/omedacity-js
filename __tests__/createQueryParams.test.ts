@@ -8,6 +8,19 @@ it("should create a time_frame param", () => {
   expect(params).toBe("?time_frame=1D");
 });
 
+it("should ignore values set to false", () => {
+  const params = createQueryParams({
+    page: 1,
+    filter: {
+      modules: false,
+    },
+  });
+
+  const hasModulesInQuery = params.indexOf("modules");
+
+  expect(hasModulesInQuery).toBe(-1);
+});
+
 it("should create a multiple params", () => {
   const params = createQueryParams({
     time_frame: "1D",
