@@ -7,7 +7,13 @@
 ```typescript
 import { OmedaCityClient } from "omedacity-js";
 const client = new OmedaCityClient();
-const builds = await client.builds.get();
+const builds = await client.builds.get({
+     filter: {
+        hero_id: 1;
+        role: Roles.Offlane;
+        order: SortingOrder.Latest;
+  };
+});
 ```
 
 ### Get build by Id
@@ -123,8 +129,8 @@ const playerMatches = await client.playerMatches.getByPlayerId({
     params: {
         time_frame: TimeFrame.OneWeek;
         page: 1;
-        matches_per_page: 10;
-        match_filter: {
+        per_page: 10;
+        filter: {
             hero_id: "1"; // The hero the player used.
             role: Roles.Offlane; // Role of the Player Id provided
             occuring_hero_id: "1"; // Additional heroes that were present (Not the player being queried)
