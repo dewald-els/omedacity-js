@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.2] - 2023-12-28 MrBetaMax <dewaldifels@gmail.com>
+
+    Fix - Remove example test code from index
+
+    * src/index.ts - Remove client instantiation example
+
 ## [0.6.1] - 2023-12-28 MrBetaMax <dewaldifels@gmail.com>
 
     Update Heroes query params
