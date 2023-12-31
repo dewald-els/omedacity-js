@@ -6,12 +6,23 @@ const findItemByNameWithClient = itemsFindByName(client);
 const findItemsWithClient = itemsFindAll(client);
 
 export class ItemsCollection {
+  items: Items = [];
   /**
    * Get all items
    * @returns {Promise<Items>}
    */
-  get(params?: ItemsQueryParams): Promise<Items> {
-    return findItemsWithClient(params);
+  async get(params?: ItemsQueryParams): Promise<Items> {
+    if (this.items.length > 0) {
+      return Promise.resolve(this.items);
+    }
+
+    try {
+      const response = await findItemsWithClient(params);
+      this.items = response;
+      return this.items;
+    } catch (error) {
+      return Promise.reject(error);
+    }
   }
 
   /**
@@ -20,6 +31,13 @@ export class ItemsCollection {
    * @returns {Promise<Item>}
    */
   getByName(name: string): Promise<Item> {
-    return findItemByNameWithClient(name);
+    let cachedItem;
+    if (this.items.length > 0) {
+      cachedItem = this.items.find((item) => item.name === name);
+    }
+    if (!cachedItem) {
+      return findItemByNameWithClient(name);
+    }
+    return Promise.resolve(cachedItem);
   }
 }
