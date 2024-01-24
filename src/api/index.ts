@@ -4,7 +4,7 @@ export const client = axios.create({
   baseURL: "https://omeda.city",
   headers: {
     "Content-Type": "application/json",
-    "x-origin-sdk": "omedacity-js@0.6.2", // Todo: Automate the incrementation
+    "x-origin-sdk": "omedacity-js@0.6.3", // Todo: Automate the incrementation
   },
 });
 
