@@ -4,7 +4,7 @@ export const client = axios.create({
   baseURL: "https://omeda.city",
   headers: {
     "Content-Type": "application/json",
-    "x-origin-sdk": "omedacity-js@0.6.3", // Todo: Automate the incrementation
+    "x-origin-sdk": "omedacity-js@0.6.4", // Todo: Automate the incrementation
   },
 });
 
@@ -15,31 +15,27 @@ export const client = axios.create({
  */
 export const createQueryParams = <T>(params?: T): string => {
   if (!params) return "";
-
-  const query: string[] = [];
-  for (const key in params) {
-    const param = params[key];
-
-    if (typeof param !== "string" && typeof param !== "number") {
-      for (const pKey in param) {
-        // TODO: There should be a better way to handle params set to false.
-        if (param[pKey] === false) {
-          continue;
-        }
-
-        if (query.length === 0) {
-          query.push("?" + key + "[" + pKey + "]" + "=" + param[pKey]);
-        } else {
-          query.push(key + "[" + pKey + "]" + "=" + param[pKey]);
-        }
-      }
+  const addParam = (key: string, value: any): string => {
+    if (value === false) {
+      return '';
+    } else if (Array.isArray(value)) {
+      return key + "=" + JSON.stringify(value);
+    } else if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
+      return key + "=" + value;
     } else {
-      if (query.length === 0) {
-        query.push("?" + key + "=" + params[key]);
-      } else {
-        query.push(key + "=" + params[key]);
-      }
+      return Object.entries(value)
+        .map(([pKey, pValue]) => addParam(`${key}[${pKey}]`, pValue))
+        .filter(param => param !== '')
+        .join("&");
     }
-  }
-  return query.join("&") ?? "";
+  };
+
+  const query = Object.entries(params)
+    .map(([key, value]) => addParam(key, value))
+    .filter(param => param !== '')
+    .join("&");
+
+  return "?" + query;
 };
+
+

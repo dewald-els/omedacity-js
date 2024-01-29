@@ -51,3 +51,35 @@ it("should create a q[name] param", () => {
 
   expect(params).toBe("?q[name]=MrBetaMax");
 });
+
+it("should create a list of strings param", () => {
+  const params = createQueryParams({
+    ids: ["1", "2", "3"]
+  });
+
+  expect(params).toBe("?ids=[\"1\",\"2\",\"3\"]");
+});
+
+it("do not add 'false' booleans at any level as parameters", () => {
+  const params = createQueryParams({
+    include: false,
+    filter: {
+      include_inactive: 0,
+      test_request: false
+    }
+  });
+
+  expect(params).toBe("?filter[include_inactive]=0");
+});
+
+it("add 'true' booleans at any level as parameters", () => {
+  const params = createQueryParams({
+    include: true,
+    filter: {
+      include_inactive: 0,
+      test_request: true
+    }
+  });
+
+  expect(params).toBe("?include=true&filter[include_inactive]=0&filter[test_request]=true");
+});
